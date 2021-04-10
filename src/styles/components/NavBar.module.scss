@@ -27,46 +27,14 @@
     }
   }
 }
-.BehindNavBar{
+
+.BehindNavBar {
   width: 100%;
-  height:180px;
-}
-
-.NavBar {
-  display: flex;
-  flex-direction: column;
-  height: 180px;
-  border-bottom: 1px solid;
-  border-color: #e5e5e5;
-
-  ul {
-    display: flex;
-    justify-content: center;
-
-    font-weight: 700;
-    font-size: 28px;
-    a {
-      padding: 7.5px;
-    }
-  }
-}
-
-.NavBarEffect {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  height: 180px;
-  border-bottom: 1px solid;
-  border-color: #e5e5e5;
-  width: 100%;
-  background: white;
-  z-index: 99999;
-  top: 0;
-
+  height: 150px;
 }
 
 .NavBarTopSection {
-  padding: 30px 30px;
+  padding: 0 30px;
   height: 70%;
   width: 100%;
   display: flex;
@@ -79,11 +47,15 @@
 
   a {
     align-self: center;
+    font-size: 0;
   }
 
-  Img {
-    width: 300px;
-    height: 100px;
+  .Logo {
+    display: flex;
+    img {
+      align-self: flex-end;
+      padding: 10px 0;
+    }
   }
 
   a {
@@ -99,53 +71,46 @@
   }
 }
 
-.ShopSection {
-  height: 800px;
-  width: 100%;
-  grid-template-columns: repeat(4, 1fr);
-  align-items: center;
-  display: none;
 
-  div {
-    height: 100%;
+@mixin NavBarBothStyles {
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  border-bottom: 1px solid;
+  border-color: #e5e5e5;
+  width: 100%;
+  background: white;
+  ul {
     display: flex;
-    align-items: flex-start;
     justify-content: center;
-    h4 {
-      display: flex;
-      align-items: center;
-      padding: 4px;
-      height: 40px;
+
+    font-weight: 700;
+    font-size: 28px;
+    a {
+      padding: 7.5px;
     }
   }
 }
 
-.shopButton {
-  display: grid;
-  height: 800px;
-  width: 100%;
-  grid-template-columns: repeat(4, 1fr);
-  align-items: center;
-  align-items: flex-start;
+.NavBar {
+  @include NavBarBothStyles;
+
 }
 
-
-.NavBar1 {
-width: 100%;
-top: -180px;
+.NavBarDropEffect {
+  @include NavBarBothStyles;
+  position: fixed;
+  z-index: 99999;
+  top: 0;
 }
 
-.NavBar2 {
+.NavBarEffectOutsideScreen {
   width: 100%;
-  height: 180px;
+  top: -150px;
+}
+
+.NavBarDropping {
+  width: 100%;
+  height: 150px;
   transition: 0.5s;
-}
-
-.NavBar3 {
-  opacity: 1;
-  transition: opacity 100ms;
-}
-
-.NavBar4 {
-
 }

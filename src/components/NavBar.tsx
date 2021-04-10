@@ -5,7 +5,6 @@ import { CSSTransition } from 'react-transition-group'
 import styles from '../styles/components/navBar.module.scss'
 
 const NavBar: NextPage = () => {
-  const [shopSectionOff, setshopSectionOn] = useState(styles.ShopSection)
   const [followNavBar, setFollowNavBar] = useState(false)
 
   const changefollowNavBar = (): void => {
@@ -37,70 +36,38 @@ const NavBar: NextPage = () => {
           in={followNavBar}
           timeout={100}
           classNames={{
-            enterActive: styles.NavBar1,
-            enterDone: styles.NavBar2,
-            exitActive: styles.NavBar3,
-            exitDone: styles.NavBar4,
+            enterActive: styles.NavBarEffectOutsideScreen,
+            enterDone: styles.NavBarDropping,
           }}
         >
-          <nav className={followNavBar ? styles.NavBarEffect : styles.NavBar}>
-            <div className={styles.NavBar}>
-              <div className={styles.NavBarTopSection}>
-                <a className={styles.SearchIcon}>
-                  <img src="./icons/search.svg" alt="SearchIcon" />
-                </a>
-                <img className={styles.logo} src="./googlelogo.png" />
-                <ul>
-                  <a>
-                    <img src="./icons/login.svg" alt="Login" />
-                  </a>
-                  <a>
-                    <img src="./icons/cart.svg" alt="" />
-                  </a>
-                </ul>
+          <nav className={followNavBar ? styles.NavBarDropEffect : styles.NavBar}>
+            <div className={styles.NavBarTopSection}>
+              <a className={styles.SearchIcon}>
+                <img src="./icons/search.svg" alt="SearchIcon" />
+              </a>
+              <div className={styles.Logo}>
+                <img
+                  className={styles.logo}
+                  src="https://cdn.shopify.com/s/files/1/0153/0959/files/blacklogo1_190x.png?v=1576374662"
+                />
               </div>
               <ul>
-                <a
-                  href="/"
-                  onMouseOver={() => {
-                    setshopSectionOn(styles.shopButton)
-                  }}
-                  onMouseOut={() => {
-                    setshopSectionOn(styles.ShopSection)
-                  }}
-                >
-                  Shop
+                <a>
+                  <img src="./icons/login.svg" alt="Login" />
                 </a>
-                <a href="">New Arrivals</a>
-                <a href="">Best Sellers</a>
-                <a href="">Sale</a>
+                <a>
+                  <img src="./icons/cart.svg" alt="" />
+                </a>
               </ul>
             </div>
+            <ul>
+              <a href="">Shop</a>
+              <a href="">New Arrivals</a>
+              <a href="">Best Sellers</a>
+              <a href="">Sale</a>
+            </ul>
           </nav>
         </CSSTransition>
-      </div>
-
-      <div
-        className={shopSectionOff}
-        onMouseOver={() => {
-          setshopSectionOn(styles.shopButton)
-        }}
-        onMouseOut={() => {
-          setshopSectionOn(styles.ShopSection)
-        }}
-      >
-        <div>
-          <h4>Aparencia</h4>
-        </div>
-        <div>
-          <h4>Acessorios</h4>
-        </div>
-        <div>
-          <h4>Cuidado com a pele</h4>
-        </div>
-        <div>
-          <h4>Outros</h4>
-        </div>
       </div>
     </>
   )
