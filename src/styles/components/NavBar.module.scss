@@ -71,7 +71,6 @@
   }
 }
 
-
 @mixin NavBarBothStyles {
   display: flex;
   flex-direction: column;
@@ -94,7 +93,6 @@
 
 .NavBar {
   @include NavBarBothStyles;
-
 }
 
 .NavBarDropEffect {
@@ -113,4 +111,89 @@
   width: 100%;
   height: 150px;
   transition: 0.5s;
+}
+
+.shopSectionEnteringActive {
+  width: 0;
+  height: 500px;
+  background: green;
+  opacity: 0;
+  transition: 0, 5s;
+}
+
+.shopSectionEntering {
+  visibility: visible;
+  background: green;
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.shopSectionExitingActive {
+  display: grid;
+  height: 500px;
+  width: 100%;
+  visibility: visible;
+  background: green;
+}
+
+.shopSectionExiting {
+  display: grid;
+  height: 500px;
+  width: 100%;
+  visibility: visible;
+  background: green;
+}
+
+.shopSectionHidden {
+  display: none;
+  visibility: visible;
+  height: 500px;
+  width: 100%;
+}
+
+.shopSectionDisplayed {
+  position: fixed;
+  z-index: 999;
+  height: 500px;
+  width: 100%;
+  visibility: visible;
+  background: white;
+  padding: 30px 200px;
+}
+
+.gridSectionWidth {
+  display: flex;
+  flex-direction: row;
+  height: 500px;
+}
+
+.eachSection {
+  width: 25%;
+  height: 100%;
+  justify-content: center;
+
+  img{
+    width: 50%;
+  }
+
+  ul {
+    margin-top: 30px;
+    list-style-type: none;
+
+    li{
+      padding: 10px;
+      letter-spacing: 2px;
+      display: flex;
+      flex-direction: column;
+      a{
+        display: flex;
+        justify-content: center;
+      }
+    }
+    li:first-child{
+      padding: 20px 10px;
+      padding-top: 0;
+    }
+  }
+
 }

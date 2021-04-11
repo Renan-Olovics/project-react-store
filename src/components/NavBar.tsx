@@ -1,11 +1,15 @@
 import { NextPage } from 'next'
+import Image from 'next/image'
 import React, { useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
+import { useCategories } from '../hooks/useCategories'
 
 import styles from '../styles/components/navBar.module.scss'
 
 const NavBar: NextPage = () => {
   const [followNavBar, setFollowNavBar] = useState(false)
+  const [dropShopSection, setDropShopSection] = useState(styles.shopSectionHidden)
+  const categories = useCategories()
 
   const changefollowNavBar = (): void => {
     if (window.scrollY >= 400) {
@@ -61,7 +65,17 @@ const NavBar: NextPage = () => {
               </ul>
             </div>
             <ul>
-              <a href="">Shop</a>
+              <a
+                onMouseEnter={() => {
+                  setDropShopSection(styles.shopSectionDisplayed)
+                }}
+                onMouseLeave={() => {
+                  setDropShopSection(styles.shopSectionDisplayed)
+                }}
+                href=""
+              >
+                Shop
+              </a>
               <a href="">New Arrivals</a>
               <a href="">Best Sellers</a>
               <a href="">Sale</a>
@@ -69,6 +83,157 @@ const NavBar: NextPage = () => {
           </nav>
         </CSSTransition>
       </div>
+      <CSSTransition
+        in={dropShopSection}
+        timeout={100}
+        classNames={{
+          enterActive: styles.shopSectionEnteringActive,
+          enterDone: styles.shopSectionEntering,
+          exitActive: styles.shopSectionExitingActive,
+          exitDone: styles.shopSectionExiting,
+        }}
+      >
+        <div
+          className={dropShopSection}
+          onMouseEnter={() => {
+            setDropShopSection(styles.shopSectionDisplayed)
+          }}
+          onMouseLeave={() => {
+            setDropShopSection(styles.shopSectionDisplayed)
+          }}
+        >
+          <div className={styles.gridSectionWidth}>
+            <div className={styles.eachSection}>
+              <div>
+                <Image
+                  className=""
+                  src={categories[0].images[0].url}
+                  width={150}
+                  height={50}
+                  layout="responsive"
+                  objectFit="cover"
+                />
+              </div>
+              <ul>
+                <li>
+                  <a href="">Nome da secao</a>
+                </li>
+                <li>
+                  <a href="">nome1</a>
+                </li>
+                <li>
+                  <a href="">Nome2</a>
+                </li>
+                <li>
+                  <a href="">Nome3</a>
+                </li>
+                <li>
+                  <a href="">Nome4</a>
+                </li>
+                <li>
+                  <a href="">Nome5</a>
+                </li>
+              </ul>
+            </div>
+            <div className={styles.eachSection}>
+              <div>
+                <Image
+                  className=""
+                  src={categories[0].images[0].url}
+                  width={150}
+                  height={50}
+                  layout="responsive"
+                  objectFit="cover"
+                />
+              </div>
+              <ul>
+                <li>
+                  <a href="">Nome da secao</a>
+                </li>
+                <li>
+                  <a href="">nome1</a>
+                </li>
+                <li>
+                  <a href="">Nome2</a>
+                </li>
+                <li>
+                  <a href="">Nome3</a>
+                </li>
+                <li>
+                  <a href="">Nome4</a>
+                </li>
+                <li>
+                  <a href="">Nome5</a>
+                </li>
+              </ul>
+            </div>
+            <div className={styles.eachSection}>
+              <div>
+                <Image
+                  className=""
+                  src={categories[0].images[0].url}
+                  width={150}
+                  height={50}
+                  layout="responsive"
+                  objectFit="cover"
+                />
+              </div>
+              <ul>
+                <li>
+                  <a href="">Nome da secao</a>
+                </li>
+                <li>
+                  <a href="">nome1</a>
+                </li>
+                <li>
+                  <a href="">Nome2</a>
+                </li>
+                <li>
+                  <a href="">Nome3</a>
+                </li>
+                <li>
+                  <a href="">Nome4</a>
+                </li>
+                <li>
+                  <a href="">Nome5</a>
+                </li>
+              </ul>
+            </div>
+            <div className={styles.eachSection}>
+              <div>
+                <Image
+                  className=""
+                  src={categories[0].images[0].url}
+                  width={150}
+                  height={50}
+                  layout="responsive"
+                  objectFit="cover"
+                />
+              </div>
+              <ul>
+                <li>
+                  <a href="">Nome da secao</a>
+                </li>
+                <li>
+                  <a href="">nome1</a>
+                </li>
+                <li>
+                  <a href="">Nome2</a>
+                </li>
+                <li>
+                  <a href="">Nome3</a>
+                </li>
+                <li>
+                  <a href="">Nome4</a>
+                </li>
+                <li>
+                  <a href="">Nome5</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </CSSTransition>
     </>
   )
 }
