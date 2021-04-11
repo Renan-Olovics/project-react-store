@@ -35,201 +35,201 @@ const NavBar: NextPage = () => {
         </ul>
       </div>
 
-      <div className={styles.BehindNavBar}>
-        <CSSTransition
-          in={followNavBar}
-          timeout={100}
-          classNames={{
-            enterActive: styles.NavBarEffectOutsideScreen,
-            enterDone: styles.NavBarDropping,
-          }}
-        >
-          <nav className={followNavBar ? styles.NavBarDropEffect : styles.NavBar}>
-            <div className={styles.NavBarTopSection}>
-              <a className={styles.SearchIcon}>
-                <img src="./icons/search.svg" alt="SearchIcon" />
-              </a>
-              <div className={styles.Logo}>
-                <img
-                  className={styles.logo}
-                  src="https://cdn.shopify.com/s/files/1/0153/0959/files/blacklogo1_190x.png?v=1576374662"
-                />
-              </div>
-              <ul>
-                <a>
-                  <img src="./icons/login.svg" alt="Login" />
-                </a>
-                <a>
-                  <img src="./icons/cart.svg" alt="" />
-                </a>
-              </ul>
-            </div>
-            <ul>
-              <a
-                onMouseEnter={() => {
-                  setDropShopSection(styles.shopSectionDisplayed)
-                }}
-                onMouseLeave={() => {
-                  setDropShopSection(styles.shopSectionDisplayed)
-                }}
-                href=""
-              >
-                Shop
-              </a>
-              <a href="">New Arrivals</a>
-              <a href="">Best Sellers</a>
-              <a href="">Sale</a>
-            </ul>
-          </nav>
-        </CSSTransition>
-      </div>
       <CSSTransition
-        in={dropShopSection}
+        in={followNavBar}
         timeout={100}
         classNames={{
-          enterActive: styles.shopSectionEnteringActive,
-          enterDone: styles.shopSectionEntering,
-          exitActive: styles.shopSectionExitingActive,
-          exitDone: styles.shopSectionExiting,
+          enterActive: styles.NavBarEffectOutsideScreen,
+          enterDone: styles.NavBarDropping,
         }}
       >
-        <div
-          className={dropShopSection}
-          onMouseEnter={() => {
-            setDropShopSection(styles.shopSectionDisplayed)
-          }}
-          onMouseLeave={() => {
-            setDropShopSection(styles.shopSectionDisplayed)
-          }}
-        >
-          <div className={styles.gridSectionWidth}>
-            <div className={styles.eachSection}>
-              <div>
-                <Image
-                  className=""
-                  src={categories[0].images[0].url}
-                  width={150}
-                  height={50}
-                  layout="responsive"
-                  objectFit="cover"
-                />
+        <div className={styles.descer}>
+          <div className={styles.BehindNavBar}>
+            <nav className={followNavBar ? styles.NavBarDropEffect : styles.NavBar}>
+              <div className={styles.NavBarTopSection}>
+                <a className={styles.SearchIcon}>
+                  <img src="./icons/search.svg" alt="SearchIcon" />
+                </a>
+                <div className={styles.Logo}>
+                  <img
+                    className={styles.logo}
+                    src="https://cdn.shopify.com/s/files/1/0153/0959/files/blacklogo1_190x.png?v=1576374662"
+                  />
+                </div>
+                <ul>
+                  <a>
+                    <img src="./icons/login.svg" alt="Login" />
+                  </a>
+                  <a>
+                    <img src="./icons/cart.svg" alt="" />
+                  </a>
+                </ul>
               </div>
               <ul>
                 <li>
-                  <a href="">Nome da secao</a>
+                  <a
+                    onMouseEnter={() => {
+                      setDropShopSection(styles.shopSectionDisplayed)
+                    }}
+                    onMouseLeave={() => {
+                      setDropShopSection(styles.shopSectionHidden)
+                    }}
+                    href=""
+                  >
+                    Shop
+                  </a>
                 </li>
                 <li>
-                  <a href="">nome1</a>
+                  <a href="">New Arrivals</a>
                 </li>
                 <li>
-                  <a href="">Nome2</a>
+                  <a href="">Best Sellers</a>
                 </li>
                 <li>
-                  <a href="">Nome3</a>
-                </li>
-                <li>
-                  <a href="">Nome4</a>
-                </li>
-                <li>
-                  <a href="">Nome5</a>
+                  <a href="">Sale</a>
                 </li>
               </ul>
-            </div>
-            <div className={styles.eachSection}>
-              <div>
-                <Image
-                  className=""
-                  src={categories[0].images[0].url}
-                  width={150}
-                  height={50}
-                  layout="responsive"
-                  objectFit="cover"
-                />
+            </nav>
+          </div>
+
+          <div
+            className={dropShopSection}
+            onMouseEnter={() => {
+              setDropShopSection(styles.shopSectionDisplayed)
+            }}
+            onMouseLeave={() => {
+              setDropShopSection(styles.shopSectionHidden)
+            }}
+          >
+            <div className={styles.gridSectionWidth}>
+              <div className={styles.eachSection}>
+                <div>
+                  <Image
+                    className=""
+                    src={categories[0].images[0].url}
+                    width={150}
+                    height={50}
+                    layout="responsive"
+                    objectFit="cover"
+                  />
+                </div>
+                <ul>
+                  <li>
+                    <a href="">Nome da secao</a>
+                  </li>
+                  <li>
+                    <a href="">nome1</a>
+                  </li>
+                  <li>
+                    <a href="">Nome2</a>
+                  </li>
+                  <li>
+                    <a href="">Nome3</a>
+                  </li>
+                  <li>
+                    <a href="">Nome4</a>
+                  </li>
+                  <li>
+                    <a href="">Nome5</a>
+                  </li>
+                </ul>
               </div>
-              <ul>
-                <li>
-                  <a href="">Nome da secao</a>
-                </li>
-                <li>
-                  <a href="">nome1</a>
-                </li>
-                <li>
-                  <a href="">Nome2</a>
-                </li>
-                <li>
-                  <a href="">Nome3</a>
-                </li>
-                <li>
-                  <a href="">Nome4</a>
-                </li>
-                <li>
-                  <a href="">Nome5</a>
-                </li>
-              </ul>
-            </div>
-            <div className={styles.eachSection}>
-              <div>
-                <Image
-                  className=""
-                  src={categories[0].images[0].url}
-                  width={150}
-                  height={50}
-                  layout="responsive"
-                  objectFit="cover"
-                />
+              <div className={styles.eachSection}>
+                <div>
+                  <Image
+                    className=""
+                    src={categories[0].images[0].url}
+                    width={150}
+                    height={50}
+                    layout="responsive"
+                    objectFit="cover"
+                  />
+                </div>
+                <ul>
+                  <li>
+                    <a href="">Nome da secao</a>
+                  </li>
+                  <li>
+                    <a href="">nome1</a>
+                  </li>
+                  <li>
+                    <a href="">Nome2</a>
+                  </li>
+                  <li>
+                    <a href="">Nome3</a>
+                  </li>
+                  <li>
+                    <a href="">Nome4</a>
+                  </li>
+                  <li>
+                    <a href="">Nome5</a>
+                  </li>
+                </ul>
               </div>
-              <ul>
-                <li>
-                  <a href="">Nome da secao</a>
-                </li>
-                <li>
-                  <a href="">nome1</a>
-                </li>
-                <li>
-                  <a href="">Nome2</a>
-                </li>
-                <li>
-                  <a href="">Nome3</a>
-                </li>
-                <li>
-                  <a href="">Nome4</a>
-                </li>
-                <li>
-                  <a href="">Nome5</a>
-                </li>
-              </ul>
-            </div>
-            <div className={styles.eachSection}>
-              <div>
-                <Image
-                  className=""
-                  src={categories[0].images[0].url}
-                  width={150}
-                  height={50}
-                  layout="responsive"
-                  objectFit="cover"
-                />
+              <div className={styles.eachSection}>
+                <div>
+                  <Image
+                    className=""
+                    src={categories[0].images[0].url}
+                    width={150}
+                    height={50}
+                    layout="responsive"
+                    objectFit="cover"
+                  />
+                </div>
+                <ul>
+                  <li>
+                    <a href="">Nome da secao</a>
+                  </li>
+                  <li>
+                    <a href="">nome1</a>
+                  </li>
+                  <li>
+                    <a href="">Nome2</a>
+                  </li>
+                  <li>
+                    <a href="">Nome3</a>
+                  </li>
+                  <li>
+                    <a href="">Nome4</a>
+                  </li>
+                  <li>
+                    <a href="">Nome5</a>
+                  </li>
+                </ul>
               </div>
-              <ul>
-                <li>
-                  <a href="">Nome da secao</a>
-                </li>
-                <li>
-                  <a href="">nome1</a>
-                </li>
-                <li>
-                  <a href="">Nome2</a>
-                </li>
-                <li>
-                  <a href="">Nome3</a>
-                </li>
-                <li>
-                  <a href="">Nome4</a>
-                </li>
-                <li>
-                  <a href="">Nome5</a>
-                </li>
-              </ul>
+              <div className={styles.eachSection}>
+                <div>
+                  <Image
+                    className=""
+                    src={categories[0].images[0].url}
+                    width={150}
+                    height={50}
+                    layout="responsive"
+                    objectFit="cover"
+                  />
+                </div>
+                <ul>
+                  <li>
+                    <a href="">Nome da secao</a>
+                  </li>
+                  <li>
+                    <a href="">nome1</a>
+                  </li>
+                  <li>
+                    <a href="">Nome2</a>
+                  </li>
+                  <li>
+                    <a href="">Nome3</a>
+                  </li>
+                  <li>
+                    <a href="">Nome4</a>
+                  </li>
+                  <li>
+                    <a href="">Nome5</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
