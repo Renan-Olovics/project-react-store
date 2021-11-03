@@ -6,7 +6,7 @@ import { CategoryData, CategoriesProvider } from '../contexts/CategoriesContext'
 import { DeviceProvider } from '../contexts/DeviceContext'
 import NavBar from '../components/NavBar'
 
-import Footer from '../components/Footer'
+import Footer from '../components/footer'
 import ProductList from '../components/ProductList'
 import CookiesModal from '../components/CookiesModal'
 
