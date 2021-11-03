@@ -1,20 +1,21 @@
+import { useState } from 'react'
 import { NextPage } from 'next'
 import Image from 'next/image'
+
 import { CSSTransition } from 'react-transition-group'
 
-import { useState } from 'react'
-import { useProducts } from '../hooks/useProducts'
-import { useParseToDisplayPrice } from '../hooks/useParseToDisplayPrice'
+import { useProducts } from '../../hooks/useProducts'
+import { useParseToDisplayPrice } from '../../hooks/useParseToDisplayPrice'
 
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 
-import styles from '../styles/components/product.module.scss'
+import styles from './styles.module.scss'
 
 interface ProductComponentProps {
   currentProduct: number
 }
 
-const Product: NextPage<ProductComponentProps> = (props) => {
+export const Product: NextPage<ProductComponentProps> = (props) => {
   const { currentProduct } = props
   const { name, price, discount, amount, images } = useProducts()[currentProduct]
   const [currentImageState, setCurrentImageState] = useState(images[0].url)
@@ -99,5 +100,3 @@ const Product: NextPage<ProductComponentProps> = (props) => {
     </div>
   )
 }
-
-export default Product

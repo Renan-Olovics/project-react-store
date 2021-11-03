@@ -1,11 +1,11 @@
 import { NextPage } from 'next'
 
-import Product from './Product'
+import { Product } from '../Product'
 
-import styles from '../styles/components/productList.module.scss'
-import { useProducts } from '../hooks/useProducts'
+import styles from './styles.module.scss'
+import { useProducts } from '../../hooks/useProducts'
 
-const ProductList: NextPage = () => {
+export const ProductList: NextPage = () => {
   const products = useProducts()
   const displayedProducts = []
 
@@ -27,5 +27,3 @@ const ProductList: NextPage = () => {
     </div>
   )
 }
-
-export default ProductList

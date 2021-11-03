@@ -4,11 +4,11 @@ import Head from 'next/head'
 import { ProductData, ProductsProvider } from '../contexts/ProductsContext'
 import { CategoryData, CategoriesProvider } from '../contexts/CategoriesContext'
 import { DeviceProvider } from '../contexts/DeviceContext'
-import NavBar from '../components/NavBar'
+import { NavBar } from '../components/NavBar'
 
-import Footer from '../components/footer'
-import ProductList from '../components/ProductList'
-import CookiesModal from '../components/CookiesModal'
+import { Footer } from '../components/Footer'
+import { ProductList } from '../components/ProductList'
+import { CookiesModal } from '../components/CookiesModal'
 
 import styles from '../styles/pages/index.module.scss'
 

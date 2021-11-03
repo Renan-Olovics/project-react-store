@@ -3,13 +3,13 @@ import { useState } from 'react'
 
 import CloseIcon from '@material-ui/icons/Close'
 
-import styles from '../styles/components/cookiesModal.module.scss'
+import styles from './styles.module.scss'
 
 interface CookiesModalViewProps {
   onClick: () => void
 }
 
-export const CookiesModalView: NextPage<CookiesModalViewProps> = ({ onClick }) => {
+const CookiesModalView: NextPage<CookiesModalViewProps> = ({ onClick }) => {
   return (
     <div className={styles.banner}>
       <p className={styles.bannerText}>
@@ -29,10 +29,14 @@ export const CookiesModalView: NextPage<CookiesModalViewProps> = ({ onClick }) =
   )
 }
 
-const CookiesModal: NextPage = () => {
+export const CookiesModal: NextPage = () => {
   const [cookiesModalState, setCookiesModalState] = useState(true)
 
-  return cookiesModalState ? <CookiesModalView onClick={() => setCookiesModalState(false)} /> : null
+  return cookiesModalState ? (
+    <CookiesModalView onClick={() => setCookiesModalState(false)} />
+  ) : (
+    <></>
+  )
 }
 
-export default CookiesModal
+// TODO: Add to localStorage to prevent showing the modal again when the user already accepts once.

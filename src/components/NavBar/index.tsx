@@ -1,12 +1,14 @@
+import React, { useState } from 'react'
 import { NextPage } from 'next'
 import Image from 'next/image'
-import React, { useState } from 'react'
+
 import { CSSTransition } from 'react-transition-group'
-import { useCategories } from '../hooks/useCategories'
 
-import styles from '../styles/components/navBar.module.scss'
+import { useCategories } from '../../hooks/useCategories'
 
-const NavBar: NextPage = () => {
+import styles from './styles.module.scss'
+
+export const NavBar: NextPage = () => {
   const [followNavBar, setFollowNavBar] = useState(false)
   const [dropShopSection, setDropShopSection] = useState(styles.shopSectionHidden)
   const categories = useCategories()
@@ -237,5 +239,3 @@ const NavBar: NextPage = () => {
     </>
   )
 }
-
-export default NavBar
