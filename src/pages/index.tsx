@@ -1,14 +1,14 @@
 import { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
 
-import { ProductData, ProductsProvider } from '../contexts/ProductsContext'
 import { CategoryData, CategoriesProvider } from '../contexts/CategoriesContext'
+import { ProductData, ProductsProvider } from '../contexts/ProductsContext'
 import { DeviceProvider } from '../contexts/DeviceContext'
-import { NavBar } from '../components/NavBar'
 
-import { Footer } from '../components/Footer'
-import { ProductList } from '../components/ProductList'
 import { CookiesModal } from '../components/CookiesModal'
+import { ProductList } from '../components/ProductList'
+import { NavBar } from '../components/NavBar'
+import { Footer } from '../components/Footer'
 
 import styles from '../styles/pages/index.module.scss'
 

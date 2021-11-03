@@ -106,14 +106,14 @@ export const NavBar: NextPage = () => {
             <div className={styles.gridSectionWidth}>
               <div className={styles.eachSection}>
                 <div>
-                  <Image
+                  {/* <Image
                     className=""
                     src={categories[0].images[0].url}
                     width={150}
                     height={50}
                     layout="responsive"
                     objectFit="cover"
-                  />
+                  /> */}
                 </div>
                 <ul>
                   <li>
@@ -138,14 +138,14 @@ export const NavBar: NextPage = () => {
               </div>
               <div className={styles.eachSection}>
                 <div>
-                  <Image
+                  {/* <Image
                     className=""
                     src={categories[0].images[0].url}
                     width={150}
                     height={50}
                     layout="responsive"
                     objectFit="cover"
-                  />
+                  /> */}
                 </div>
                 <ul>
                   <li>
@@ -170,14 +170,14 @@ export const NavBar: NextPage = () => {
               </div>
               <div className={styles.eachSection}>
                 <div>
-                  <Image
+                  {/* <Image
                     className=""
                     src={categories[0].images[0].url}
                     width={150}
                     height={50}
                     layout="responsive"
                     objectFit="cover"
-                  />
+                  /> */}
                 </div>
                 <ul>
                   <li>
@@ -202,14 +202,14 @@ export const NavBar: NextPage = () => {
               </div>
               <div className={styles.eachSection}>
                 <div>
-                  <Image
+                  {/* <Image
                     className=""
                     src={categories[0].images[0].url}
                     width={150}
                     height={50}
                     layout="responsive"
                     objectFit="cover"
-                  />
+                  /> */}
                 </div>
                 <ul>
                   <li>
@@ -239,3 +239,5 @@ export const NavBar: NextPage = () => {
     </>
   )
 }
+
+//TODO: Full refactor

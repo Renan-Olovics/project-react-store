@@ -3,6 +3,8 @@ import { useState } from 'react'
 
 import CloseIcon from '@material-ui/icons/Close'
 
+import { CookiesTermManager } from '../../services/cache/cookiesTerm'
+
 import styles from './styles.module.scss'
 
 interface CookiesModalViewProps {
@@ -18,7 +20,7 @@ const CookiesModalView: NextPage<CookiesModalViewProps> = ({ onClick }) => {
         <span>
           O uso continuado de nosso site será considerado como aceitação de nossas práticas em torno
           de privacidade e informações pessoais. Se você tiver alguma dúvida sobre como lidamos com
-          dados do usuário e informações pessoais, pode checkar informações adicionais em{' '}
+          dados do usuário e informações pessoais, pode checar informações adicionais em&#160;
         </span>
         <a href="/policies">Política de Privacidade</a>.
       </p>
@@ -30,13 +32,14 @@ const CookiesModalView: NextPage<CookiesModalViewProps> = ({ onClick }) => {
 }
 
 export const CookiesModal: NextPage = () => {
-  const [cookiesModalState, setCookiesModalState] = useState(true)
+  function handleCloseCookies() {
+    setCookiesModalState(false)
+    CookiesTermManager.saveAccepted()
+  }
 
-  return cookiesModalState ? (
-    <CookiesModalView onClick={() => setCookiesModalState(false)} />
-  ) : (
-    <></>
-  )
+  const cookieStatus = CookiesTermManager.getAccepted() === 'accepted' ? false : true
+
+  const [cookiesModalState, setCookiesModalState] = useState(cookieStatus)
+
+  return cookiesModalState ? <CookiesModalView onClick={handleCloseCookies} /> : <></>
 }
-
-// TODO: Add to localStorage to prevent showing the modal again when the user already accepts once.
